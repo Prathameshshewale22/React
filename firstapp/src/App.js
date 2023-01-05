@@ -11,33 +11,6 @@ import {BrowserRouter as Router,Route,Switch,Link} from 'react-router-dom';
 import ProductCard from './components/Productcard';
 
 function App() {
-  // let [prodarr,setprodarr]=useState([]);
-
-  // useEffect(()=>{
-  //    productService.getproduct().
-  //    then((Response)=>{
-  //     setprodarr(Response.data);
-  //    })
-  // },[]);
-
-  // const insertData=(ob)=>{
-  //    setprodarr([...prodarr,{...ob}]);
-
-  // }
-  // const deleteprod=(id)=>{
-  //   let newarr=prodarr.filter(ob=>ob.pid!==id);
-  //   setprodarr(newarr);
-  // }
-  // const editdata=(ob)=>{
-  //   let newarr=prodarr.map(prod=>prod.pid===ob.pid?{...ob}:{...prod})
-  //   console.log(ob);
-  //   setprodarr(newarr);
-  // }
-  // const Editdata=()=>{
-      
-  // }
-
-
   return (
     <div>
      <div>
@@ -53,7 +26,7 @@ function App() {
       </Switch>
     </Router>
       </div>
-      {/* Updatedata={Editdata}; */}
+     
       </div>
   );
 }

@@ -9,6 +9,7 @@ const Productlist=(props)=>{
   let[flag,setflag]=useState(false);
   let[prodob,setprod]=useState([]);
 
+   //this useEffect runs first when dom is get loaded 
   useEffect(()=>{
     ProductService.getproduct()
     .then((response)=>{
@@ -28,6 +29,7 @@ const Productlist=(props)=>{
         .catch(()=>{});
         
     }
+    //this use effect run when flag value is set to true
     useEffect(()=>{
       ProductService.getproduct()
       .then((response)=>{
@@ -37,18 +39,8 @@ const Productlist=(props)=>{
       })
       .catch((err)=>{console.log("error occured",err)});
      },[flag]);
-    // const changeprod=(ob)=>{
-    //     setflag(true);
-    //     setprod({pid:"",pname:"",price:""});
-    //     setprod({...ob});
-    // }
-  //
-      // const editData=(ob)=>{
-      //   props.Updatedata(ob);
-      // }
-
-
-
+   
+     //render the data comming from database through axios 
    const renderlist=()=>{
     console.log(props.product);
      return prodob.map((prod,index)=>{
@@ -67,11 +59,7 @@ const Productlist=(props)=>{
         </tr>
       });
     }
-    // const editprod=(ob)=>{
-    //   props.updateprod(ob);
-    //   setflag(false);
-    // }
-  // {flag?<div><Editprod product={prodob} modifyprod={editprod}></Editprod></div>:" "}
+  
     return(
 <div>
     <h1>Product List </h1>
